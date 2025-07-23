@@ -1,0 +1,82 @@
+/* styles/navbar.css */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: #222;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+  z-index: 10;
+}
+
+.navbar-logo {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.navbar-menu {
+  display: flex;
+  gap: 25px;
+}
+
+.navbar-menu a {
+  text-decoration: none;
+  color: #ddd;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.navbar-menu a:hover {
+  color: white;
+}
+
+.hamburger {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .navbar-menu {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 30px;
+    background-color: #333;
+    flex-direction: column;
+    width: 160px;
+    padding: 10px;
+    border-radius: 6px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  }
+
+  .navbar-menu.show {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
+.navbar-menu a {
+  text-decoration: none;
+  color: #aaa;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.navbar-menu a:hover {
+  color: #fff;
+}
+
+.navbar-menu a.active {
+  color: #fff;
+}
