@@ -22,7 +22,7 @@ const Navbar = () => {
 
   return (
     <nav className="navbar">
-      <span className="navbar-logo" onClick={scrollToTop}>Home</span>
+      <a href="/" className="navbar-logo" onClick={scrollToTop}>Home</a>
 
       <button className="hamburger" onClick={toggleMenu}>
         ☰
@@ -30,25 +30,32 @@ const Navbar = () => {
 
       <div className={`navbar-menu ${menuOpen ? 'show' : ''}`}>
         <a
-          href="/about"
-          className={currentPath === '/about' ? 'active' : ''}
+          href="/features"
+          className={currentPath === '/features' ? 'active' : ''}
           onClick={closeMenu}
         >
-          About
+          Features
         </a>
         <a
-          href="/services"
-          className={currentPath === '/services' ? 'active' : ''}
+          href="/pricing"
+          className={currentPath === '/pricing' ? 'active' : ''}
           onClick={closeMenu}
         >
-          Services
+          Pricing
         </a>
         <a
-          href="/contact"
-          className={currentPath === '/contact' ? 'active' : ''}
+          href="/login"
+          className={currentPath === '/login' ? 'active' : ''}
           onClick={closeMenu}
         >
-          Contact
+          Login
+        </a>
+        <a
+          href="/register"
+          className={currentPath === '/register' ? 'active' : ''}
+          onClick={closeMenu}
+        >
+          Register
         </a>
       </div>
     </nav>
