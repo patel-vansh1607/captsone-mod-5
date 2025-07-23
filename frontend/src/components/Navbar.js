@@ -22,7 +22,7 @@ const Navbar = () => {
 
   return (
     <nav className="navbar">
-      <a href="/" className="navbar-logo" onClick={scrollToTop}>Home</a>
+      <a href="/" className="navbar-logo" onClick={scrollToTop}>taskee</a>
 
       <button className="hamburger" onClick={toggleMenu}>
         ☰
