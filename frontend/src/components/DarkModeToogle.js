@@ -5,3 +5,5 @@ const DarkModeToggle = () => {
         </button>
     )
 }
+
+export default DarkModeToggle;
