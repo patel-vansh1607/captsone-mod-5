@@ -1,6 +1,7 @@
 import Navbar from './components/Navbar';
 import './App.css'
 import React, { useState } from 'react';
+import first_mockup from './assets/demo-app-1.png';
 function App() {
     const [isYearly, setIsYearly] = useState(true);
   return (
@@ -20,7 +21,7 @@ function App() {
         </a>
       </div>
       </section>
-
+      <img className="mimage" src={first_mockup} alt="Logo" width="900" />
       <section className="pricing-section">
       <h2 className="pricing-title">Pricing</h2>
 
