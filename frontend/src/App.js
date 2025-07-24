@@ -2,6 +2,7 @@ import Navbar from './components/Navbar';
 import './App.css'
 import React, { useState } from 'react';
 import first_mockup from './assets/demo-app-1.png';
+import second_mockup from './assets/demo-app-2.png';
 function App() {
     const [isYearly, setIsYearly] = useState(true);
   return (
@@ -22,6 +23,19 @@ function App() {
       </div>
       </section>
       <img className="mimage" src={first_mockup} alt="Logo" width="900" />
+      <div className="hero-container">
+      <div className="hero-image">
+        <img src={second_mockup} alt="Mobile Mockup" />
+      </div>
+      <div className="hero-content">
+        <h1>Simplify Your Workflow,<br /> Anytime, Anywhere</h1>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut neque libero.
+          Sed volutpat risus id sem convallis, at sagittis urna.
+        </p>
+        <button className="learn-more-btn">Learn more</button>
+      </div>
+    </div>
       <section className="pricing-section">
       <h2 className="pricing-title">Pricing</h2>
 
