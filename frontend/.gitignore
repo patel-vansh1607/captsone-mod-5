@@ -17,7 +17,12 @@
 .env.development.local
 .env.test.local
 .env.production.local
-
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+.cache/
+# Ignore .pack files anywhere
+*.pack
+
+# Or specifically ignore them from node_modules
+frontend/node_modules/**/*.pack
