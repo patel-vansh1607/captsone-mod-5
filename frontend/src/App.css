@@ -261,7 +261,12 @@ input:checked + .slider:before {
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
-
+.mimage {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
 .newsletter-button:hover {
   background-color: #333;
 }
