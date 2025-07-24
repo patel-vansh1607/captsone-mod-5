@@ -70,6 +70,23 @@ function App() {
         </div>
       </div>
     </section>
+
+    <div className="newsletter-container">
+      <h2 className="newsletter-title">Sign up to our newsletter</h2>
+      <p className="newsletter-subtitle">
+        Receive latest news, updates and many other news every week.
+      </p>
+      <form className="newsletter-form">
+        <input
+          type="email"
+          placeholder="Enter your email address"
+          className="newsletter-input"
+        />
+        <button type="submit" className="newsletter-button">
+          ➤
+        </button>
+      </form>
+    </div>
     </div>
   );
 }
