@@ -3,6 +3,7 @@ import './App.css'
 import React, { useState } from 'react';
 import first_mockup from './assets/demo-app-1.png';
 import second_mockup from './assets/demo-app-2.png';
+import third_mockup from './assets/demo-app-3.png';
 function App() {
     const [isYearly, setIsYearly] = useState(true);
   return (
@@ -34,6 +35,21 @@ function App() {
           Sed volutpat risus id sem convallis, at sagittis urna.
         </p>
         <button className="learn-more-btn">Learn more</button>
+      </div>
+    </div>
+
+    <div className="hero-container">
+      <div className="hero-text">
+        <h1>Transform Your Routine for<br />Productivity and Reflection</h1>
+        <p>
+          Efficiently manage your tasks with our intuitive todo app, ensuring smooth organization
+          and enhanced productivity with every click.
+        </p>
+        <button className="learn-more-btn">Learn more</button>
+      </div>
+
+      <div className="hero-image">
+        <img src={third_mockup} alt="Todo App UI" />
       </div>
     </div>
       <section className="pricing-section">
