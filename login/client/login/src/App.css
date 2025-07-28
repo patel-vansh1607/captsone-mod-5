@@ -14,9 +14,10 @@ body{
   background-color: #cbdfff;
 }
 
-.form-container{
-  width: 1000px;
+.form-container {
+  width: 1000px
 }
+
 .title, .slogan{
   text-align: center;
 }
