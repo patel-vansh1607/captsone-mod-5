@@ -20,6 +20,12 @@ exports.signup = async (req, res, next) => {
         const token = jwt.sign({_id: newUser._id}, "secretKey123",{
             expiresIn: '90d',
         })
+
+    res.status(201).json({
+            status: 'success',
+            message: 'User registered successfully',
+            token
+        })
     }catch(error){
         next(error)
     }
