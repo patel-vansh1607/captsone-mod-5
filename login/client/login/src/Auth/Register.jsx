@@ -1,15 +1,20 @@
 import React from 'react';
-import { Card, Typography, Form, Input, Button } from 'antd';
+import { Card, Typography, Form, Input, Button, Flex, Alert, Spin} from 'antd';
 import { Link } from 'react-router-dom';
+import registerimage from "../assets/images.jpeg"
+
+
+
 const Register = () => {
   const handleRegister = (values) => {
     console.log(values);
   };
 
   return (
-    <div>
-      <Card className="form-container" >
-        <Typography.Title level={3} className="title">
+      <Card className="form-container" >   
+      <Flex gap="large" align='center'>
+        <Flex vertical flex={1}>
+          <Typography.Title level={3} className="title">
           <strong>Create an account</strong>
         </Typography.Title>
         <Typography.Text type="secondary" className="slogan">
@@ -72,16 +77,18 @@ const Register = () => {
           >
             <Input.Password size="large" placeholder="Re-enter your password" />
           </Form.Item>
-
+            {/* {
+              error && <Alert description={error} type="error" showIcon closable className='alert' />
+            } */}
           <Form.Item>
             <Button 
-            type="primary" 
+            /* type={`${loading ? '' : 'primary'}`} */
             htmlType="submit"
             size="large"
             block
             className='btn'>
-              Create Account
-            </Button>
+{/*               {loading ? <Spin /> : 'Create Account'}
+ */}            </Button>
           </Form.Item>
 
           <Form.Item>
@@ -94,10 +101,14 @@ const Register = () => {
             </Button>
             </Link>
           </Form.Item>
-          
         </Form>
+        </Flex>
+        <Flex flex={1}>
+          <img src={registerimage} className='auth-image' />
+        </Flex>
+      </Flex>
       </Card>
-    </div>
+
   );
 };
 
