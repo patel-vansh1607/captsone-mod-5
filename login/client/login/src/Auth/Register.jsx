@@ -1,5 +1,6 @@
 import React from 'react'
 import { Card, Flex, Typography, Form, Input, Button } from 'antd';
+import { p } from 'framer-motion/client';
 
 
 
@@ -32,7 +33,7 @@ const Register = () => {
                     }
                     ]} 
                      >
-                    <Input placeholder='Enter your full name' />
+                    <Input size="large" placeholder='Enter your full name' />
                 </Form.Item>
                 <Form.Item 
                 label="Email"
@@ -42,11 +43,39 @@ const Register = () => {
                         required: true,
                         message: 'Please enter your email'
                     },
+                    {
+                        type: 'email',
+                        message: 'The input is not valid E-mail!'
+                    }
                     ]} 
                      >
-                    <Input placeholder='Enter your email' />
+                    <Input size="large" placeholder='Enter your email' />
                 </Form.Item>
-
+                 <Form.Item 
+                label="Password"
+                name="password"
+                rules={[
+                    {
+                        required: true,
+                        message: 'Please enter your password'
+                    }
+                    ]} 
+                     >
+                    <Input.Password size="large" placeholder='Enter your password' />
+                </Form.Item>
+                 <Form.Item 
+                label="Password "
+                name="passwordConfirm"
+                rules={[
+                    {
+                        required: true,
+                        message: 'Please confirm your password'
+                    }
+                    ]} 
+                     >
+                    <Input.Password size="large" placeholder='Re-enter your password' />
+                </Form.Item>
+                    <
                 </Form>
             </Flex>
 
