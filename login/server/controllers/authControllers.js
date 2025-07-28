@@ -41,35 +41,35 @@
 
 
     //login user
-    exports.login = async (req, res, next) => { 
-        try {
-            const {email, password} = req.body;
+exports.login = async (req, res, next) => { 
+    try {
+        const { email, password } = req.body;
 
-            const user = await User.findOne({email})
+        const user = await User.findOne({ email });
 
-            if(!user) return next(new createError('Invalid email or password', 404));
+        if (!user) return next(new createError('Invalid email or password', 404));
 
-            const isPasswordValid = await bcrypt.compare(password, user.password);
-            if (!isPasswordValid) {
-                return next(new createError("Invalid email or password", 401));
-            
-            }
-            const token = jwt.sign({_id: user._id}, "secretKey123",{
-                expiresIn: '90d',
-            })
+        const isPasswordValid = await bcrypt.compare(password, user.password);
+        if (!isPasswordValid) {
+            return next(new createError("Invalid email or password", 401));
+        }
 
-            res.status(201).json({
+        const token = jwt.sign({ _id: user._id }, "secretKey123", {
+            expiresIn: '90d',
+        });
+
+        res.status(201).json({
             status: 'success',
-            message: 'User registered successfully', 
+            message: 'User logged in successfully',
             token,
             user: {
-                _id: newUser._id,
-                name: newUser.name,
-                email: newUser.email,
-                role: newUser.role
+                _id: user._id,
+                name: user.name,
+                email: user.email,
+                role: user.role
             }
-            });
-        } catch (error) {
-            next(error);
-        }
+        });
+    } catch (error) {
+        next(error);
     }
+};
