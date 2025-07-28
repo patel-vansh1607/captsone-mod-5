@@ -33,10 +33,10 @@ mongoose
 app.use((err, res, req, next) => {
     err.statuCode = err.statuCode || 500;
     err.status = err.status || 'error';
-    res.status(err.statuCode).json{
+    res.status(err.statuCode).json({
         status: err.status,
         message: err.message,
-    }
+    })
 })
 
 
