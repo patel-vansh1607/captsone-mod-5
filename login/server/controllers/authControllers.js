@@ -1,4 +1,5 @@
 const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
 const User = require('../models/userModel')
 const createError = require('../utils/appError');
 //register user
@@ -15,7 +16,10 @@ exports.signup = async (req, res, next) => {
             password: hashedPassword
         })
 
-        //jwt
+        // assigning jwt to user
+        const token = jwt.sign({_id: newUser._id}, "secretKey123",{
+            expiresIn: '90d',
+        })
     }catch(error){
         next(error)
     }
