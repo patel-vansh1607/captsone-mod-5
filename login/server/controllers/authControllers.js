@@ -10,7 +10,7 @@ exports.signup = async (req, res, next) => {
         if(user) {
             return next(new createError('User already exists', 400));
         }
-        const hashedPassword = await bcrypt.has(req.body.password, 12);
+        const hashedPassword = await bcrypt.hash(req.body.password, 12);
         const newUser = await User.create({
             ...req.body,
             password: hashedPassword
@@ -35,4 +35,6 @@ exports.signup = async (req, res, next) => {
 
 
 //login user
-  exports.login = async (req, res, next) => { }
+  exports.login = async (req, res, next) => { 
+    res.send('Login');
+  }

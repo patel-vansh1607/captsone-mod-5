@@ -13,7 +13,7 @@ app.use(express.json());
 
 
 //route
-
+app.use('/api/auth', authRouter);
 
 
 
@@ -22,7 +22,7 @@ app.use(express.json());
 
 //mogoose connection
 mongoose
-.connect('mongodb://127.0.0.1:27017/authentication')
+.connect('mongodb://127.0.0.1:27017/auth')
 .then(() => console.log('MongoDB connected'))
 .catch((error)=> console.error('MongoDB connection error:', error));
 
@@ -30,15 +30,15 @@ mongoose
 
 
 //global error handler
-app.use((err, res, req, next) => {
-    err.statuCode = err.statuCode || 500;
-    err.status = err.status || 'error';
-    res.status(err.statuCode).json({
-        status: err.status,
-        message: err.message,
-    })
-})
+app.use((err, req, res, next) => {
+  err.statusCode = err.statusCode || 500;
+  err.status = err.status || 'error';
 
+  res.status(err.statusCode).json({
+    status: err.status,
+    message: err.message,
+  });
+});
 
 
 
