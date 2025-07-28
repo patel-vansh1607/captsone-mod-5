@@ -75,7 +75,16 @@ const Register = () => {
                      >
                     <Input.Password size="large" placeholder='Re-enter your password' />
                 </Form.Item>
-                    <
+                    <Form.Item>
+                        <Button 
+                        type='primary'
+                        htmlType='submit'
+                        size='large' 
+                        className='btn'>Create Account</Button>
+                    </Form.Item>
+                    <Form.Item>
+                        <Button>Create Account</Button>
+                    </Form.Item>
                 </Form>
             </Flex>
 
