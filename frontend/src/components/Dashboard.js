@@ -1,11 +1,15 @@
-import React from 'react'
+import React from 'react';
+import Sidebar from './SideBar';
+import "../style.css"
 
-const Dashboard = () => {
+function Dashboard() {
   return (
-    <div>
-      <h1>Dashboard</h1>
+    <div style={{ padding: '30px' }}>
+      <Sidebar />
+      <h1>Welcome to your SmartTasker Dashboard!</h1>
+      <p>Manage your tasks, habits, and productivity here.</p>
     </div>
-  )
+  );
 }
 
-export default Dashboard
+export default Dashboard;
