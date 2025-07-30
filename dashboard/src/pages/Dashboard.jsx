@@ -1,6 +1,6 @@
 import React from 'react'
 import { Avatar, Button, Card, Typography, Flex } from 'antd'
-import { useAuth } from '../contexts/AuthContext'
+import { useAuth } from '../context/AuthProvider'
 import { UserOutlined } from '@ant-design/icons'
 const Dashboard = () => {
   const { userData, logout } = useAuth()

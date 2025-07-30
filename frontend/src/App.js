@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import first_mockup from './assets/demo-app-1.png';
 import second_mockup from './assets/demo-app-2.png';
 import third_mockup from './assets/demo-app-3.png';
+import { Link } from 'react-router-dom';
 function App() {
     const [isYearly, setIsYearly] = useState(true);
   return (
@@ -15,9 +16,9 @@ function App() {
         Make each count with effortless organization, ensuring productivity and purpose every day
       </p>
       <div className="promo-buttons">
-        <a href="#" className="store-button app-store">
+        <Link to="/dashboard" className="store-button app-store">
           <i className="fab fa-apple"></i> App Store
-        </a>
+        </Link>
         <a href="#" className="store-button play-store">
           <i className="fab fa-google-play"></i> Play Store
         </a>

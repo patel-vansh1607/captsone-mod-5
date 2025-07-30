@@ -24,13 +24,19 @@ app.get('/', (req, res) => {
 app.post('/api/content', async (req, res) => {
   try {
     const { question } = req.body;
-    if (!question) return res.status(400).json({ error: 'Question is required' });
 
-    const result = await model.generateContent(question);
-    const output = await result.response.text();
+    if (!question) {
+      return res.status(400).json({ error: 'Question is required' });
+    }
+
+    const result = await model.generateContent({
+      contents: [{ role: 'user', parts: [{ text: question }] }]
+    });
+
+    const output = result.response.text();
     res.json({ result: output });
   } catch (err) {
-    console.error('Error generating content:', err);
+    console.error('❌ Error generating content:', err);
     res.status(500).json({ error: 'Failed to generate content' });
   }
 });
