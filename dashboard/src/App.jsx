@@ -1,38 +1,120 @@
+import { Route, Routes, useLocation, Navigate } from 'react-router-dom';
+import './index.css';
+import './App.css';
 
-
-import { Route, Routes } from 'react-router-dom'
-import './index.css'
-import AddTask from './components/AddTask';
 import Sidebar from './components/Sidebar';
+import AddTask from './components/AddTask';
 import AllTasks from './components/AllTasks';
 import CompleteTask from './components/CompleteTask';
 import InProgressTask from './components/InProgressTask';
-import Dashboard from './components/Dashboard';
+import Dashboard from './pages/Dashboard';
 import PendingTask from './components/PendingTask';
 import Deployed from './components/Deployed';
 import Deferred from './components/Deferred';
-import './App.css'
+import LandingPage from './components/Main';
+import Gemini_AI from './components/Gemini_ai';
+import ProtectedRoute from './components/ProtectedRoute';
 
+import Register from './auth/Register';
+import Login from './auth/Login';
+
+import { useAuth } from './context/AuthProvider';
 
 const App = () => {
+  const location = useLocation();
+  const { isAuthenticated } = useAuth();
 
   return (
-
-    <div className='flex h-full'>
-      <Sidebar />
+    <div className="flex h-full">
       <Routes>
-        <Route path="/" element={<AllTasks />} />
-        <Route path="/addTask" element={<AddTask />} />
-        <Route path="/allTask" element={<AllTasks />} />
-        <Route path="/completeTask" element={<CompleteTask />} />
-        <Route path="/pendingTask" element={<PendingTask />} />
-        <Route path="/deployedTask" element={<Deployed />} />
-        <Route path="/deferredTask" element={<Deferred />} />
-        <Route path="/inProgressTask" element={<InProgressTask />} />
-        <Route path="/statsTask" element={<Dashboard />} />
+        {/* Public Routes */}
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/register" element={!isAuthenticated ? <Register /> : <Navigate to="/dashboard" />} />
+        <Route path="/login" element={!isAuthenticated ? <Login /> : <Navigate to="/dashboard" />} />
+
+        {/* Protected Routes */}
+        <Route
+          path="/dashboard"
+          element={
+            <ProtectedRoute>
+              <Dashboard />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/addTask"
+          element={
+            <ProtectedRoute>
+              <AddTask />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/allTask"
+          element={
+            <ProtectedRoute>
+              <AllTasks />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/completeTask"
+          element={
+            <ProtectedRoute>
+              <CompleteTask />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/pendingTask"
+          element={
+            <ProtectedRoute>
+              <PendingTask />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/deployedTask"
+          element={
+            <ProtectedRoute>
+              <Deployed />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/deferredTask"
+          element={
+            <ProtectedRoute>
+              <Deferred />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/inProgressTask"
+          element={
+            <ProtectedRoute>
+              <InProgressTask />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/statsTask"
+          element={
+            <ProtectedRoute>
+              <Dashboard />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/geminiAi"
+          element={
+            <ProtectedRoute>
+              <Gemini_AI />
+            </ProtectedRoute>
+          }
+        />
       </Routes>
     </div>
-
   );
 };
 
