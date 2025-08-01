@@ -2,6 +2,7 @@ import TaskCard from "./TaskCard";
 import { useSelector } from 'react-redux';
 import { selectAllTasks } from '../store/taskSlice';
 import { Link } from "react-router-dom";
+import Sidebar from "./Sidebar";
 
 
 const PendingTask = () => {
@@ -9,6 +10,8 @@ const PendingTask = () => {
     const tasks = useSelector(selectAllTasks);
     const completedTasks = tasks.filter(task => task.status === 'Pending');
     return (
+        <>
+        <Sidebar />
         <div className="w-[70%] mx-auto">
             <div className="mt-10">
                 <h1 className="text-3xl font-bold my-8 text-center">Pending Tasks</h1>
@@ -34,6 +37,7 @@ const PendingTask = () => {
                 </div >)
             }
         </div>
+        </>
     )
 }
 
