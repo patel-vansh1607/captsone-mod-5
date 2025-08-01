@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import { selectAllTasks } from "../store/taskSlice";
 import { Link } from "react-router-dom";
 import { IoFilterSharp, IoClose } from "react-icons/io5";
+import Sidebar from "./Sidebar";
 
 const AllTasks = () => {
     const tasks = useSelector(selectAllTasks);
@@ -26,6 +27,8 @@ const AllTasks = () => {
     });
 
     return (
+       <>
+       <Sidebar />
         <div className="w-[70%] mx-auto">
             <div className="mt-10">
                 <h1 className="text-3xl ubuntu-bold my-8 text-center">Task Board</h1>
@@ -113,7 +116,8 @@ const AllTasks = () => {
                 </div>
             )}
         </div>
-    );
+
+       </>    );
 };
 
 export default AllTasks;
