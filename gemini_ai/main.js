@@ -1,61 +1,57 @@
-const express = require('express');
-const cors = require('cors');
-const bodyParser = require('body-parser');
-const { GoogleGenerativeAI } = require('@google/generative-ai');
-require('dotenv').config();
+import React, { useState } from 'react';
+import axios from 'axios';
 
-const app = express();
-const PORT = process.env.PORT || 5000;
+const Gemini_AI = () => {
+  const [query, setQuery] = useState('');
+  const [response, setResponse] = useState('');
+  const [loading, setLoading] = useState(false);
 
-// ✅ Middleware
-app.use(cors({
-  origin: '*', // For local testing, allow all origins. Change in production.
-  methods: ['GET', 'POST'],
-}));
-app.use(bodyParser.json());
+  const handleAsk = async () => {
+    if (!query) return;
 
-// ✅ Login route
-app.post('/login', (req, res) => {
-  const { username, password } = req.body;
-  if (!username || !password) {
-    return res.status(400).json({ error: 'Username and password are required' });
-  }
-  res.json({ message: `Welcome, ${username}!` });
-});
+    setLoading(true);
+    try {
+      const res = await axios.post(
+        'https://captsone-mod-5.onrender.com/api/content',
+        { question: query },
+        {
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        }
+      );
+      setResponse(res.data.result);
+    } catch (error) {
+      console.error('❌ Error calling Gemini backend:', error.message);
+      setResponse('Failed to get response from Gemini backend.');
+    } finally {
+      setLoading(false);
+    }
+  };
 
-// ✅ Initialize Gemini (check API key)
-let model;
-try {
-  const genAI = new GoogleGenerativeAI(process.env.GOOGLE_API_KEY);
-  model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' });
-} catch (err) {
-  console.error('❌ Error initializing Gemini model:', err.message);
-}
+  return (
+    <div style={{ fontFamily: 'Poppins', padding: '2rem' }}>
+      <h1>Ask Gemini AI</h1>
+      <input
+        type="text"
+        value={query}
+        placeholder="Ask something..."
+        onChange={(e) => setQuery(e.target.value)}
+        style={{ padding: '10px', width: '300px', marginRight: '10px' }}
+      />
+      <button onClick={handleAsk} style={{ padding: '10px 20px' }}>
+        Ask
+      </button>
+      {loading ? (
+        <p>Loading...</p>
+      ) : (
+        <div style={{ marginTop: '20px' }}>
+          <strong>Response:</strong>
+          <p>{response}</p>
+        </div>
+      )}
+    </div>
+  );
+};
 
-// ✅ AI route
-app.post('/api/content', async (req, res) => {
-  try {
-    const { question } = req.body;
-    if (!question) return res.status(400).json({ error: 'Question is required' });
-
-    const result = await model.generateContent({
-      contents: [{ role: 'user', parts: [{ text: question }] }],
-    });
-
-    const output = await result.response.text(); // ✅ Important: `await` here
-    res.json({ result: output });
-  } catch (err) {
-    console.error('❌ Error generating content:', err);
-    res.status(500).json({ error: 'Failed to generate content', details: err.message });
-  }
-});
-
-// ✅ Root route
-app.get('/', (req, res) => {
-  res.send('✅ Backend with Login & Gemini AI is running.');
-});
-
-// ✅ Start server
-app.listen(PORT, () => {
-  console.log(`🚀 Server is live at http://localhost:${PORT}`);
-});
+export default Gemini_AI;
