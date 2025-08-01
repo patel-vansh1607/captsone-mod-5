@@ -2,6 +2,7 @@ import TaskCard from "./TaskCard";
 import { useSelector } from 'react-redux';
 import { selectAllTasks } from '../store/taskSlice';
 import { Link } from "react-router-dom";
+import Sidebar from "./Sidebar";
 
 
 const Deployed = () => {
@@ -10,6 +11,8 @@ const Deployed = () => {
     const completedTasks = tasks.filter(task => task.status === 'Deployed');
   return (
     
+      <>
+      <Sidebar />
       <div className="w-[70%] mx-auto">
           <div className="mt-10">
               <h1 className="text-3xl font-bold my-8 text-center">Deployed Tasks</h1>
@@ -35,7 +38,9 @@ const Deployed = () => {
               </div >)
           }
       </div>
-  )
+
+      </> 
+       )
 }
 
 export default Deployed
