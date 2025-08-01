@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import axios from 'axios';
 import ReactMarkdown from 'react-markdown';
 import '../styles/Gemini_Ai.css'
+import Sidebar from './Sidebar';
 const suggestedQuestions = [
   "How do I prioritize tasks effectively?",
   "What are the best tools for task management?",
@@ -51,6 +52,8 @@ const Gemini_AI = () => {
   }, [conversation, loading]);
 
   return (
+    <>
+    <Sidebar/>
     <div className={`app-wrapper ${darkMode ? 'dark' : ''}`}>
       <div className="chat-scroll-area">
         <h1 className="title">💬 Ask Gemini AI</h1>
@@ -114,6 +117,8 @@ const Gemini_AI = () => {
         </div>
       </div>
     </div>
+
+    </>
   );
 };
 
