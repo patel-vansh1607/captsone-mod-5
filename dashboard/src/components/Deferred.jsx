@@ -2,13 +2,16 @@ import TaskCard from "./TaskCard";
 import { useSelector } from 'react-redux';
 import { selectAllTasks } from '../store/taskSlice';
 import { Link } from "react-router-dom";
+import Sidebar from "./Sidebar";
 
 
 const Deferred = () => {
     const tasks = useSelector(selectAllTasks);
     const completedTasks = tasks.filter(task => task.status === 'Deferred');
   return (
-      <div className="w-[70%] mx-auto">
+    <>
+    <Sidebar />
+    <div className="w-[70%] mx-auto">
           <div className="mt-10">
               <h1 className="text-3xl font-bold my-8 text-center">Deferred Tasks</h1>
           </div>
@@ -33,7 +36,9 @@ const Deferred = () => {
               </div >)
           }
       </div>
-  )
+
+    </>
+        )
 }
 
 export default Deferred
