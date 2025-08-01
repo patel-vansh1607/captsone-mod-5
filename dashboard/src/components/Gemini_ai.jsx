@@ -31,7 +31,7 @@ const Gemini_AI = () => {
     setQuestion('');
 
     try {
-      const res = await axios.post('http://localhost:3000/api/content', {
+      const res = await axios.post('https://captsone-mod-5.onrender.com/api/content', {
         question: query,
       });
 
