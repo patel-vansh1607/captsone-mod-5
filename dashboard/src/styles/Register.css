@@ -1,51 +1,82 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
 
-/* *{
-  margin: 0;
-  padding: 0;
-  font-family: 'Poppins', sans-serif;
-}
-
-body{
+/* full-screen background */
+.register-page {
+  min-height: 100vh;
+  width: 100%;
+  background: linear-gradient(to right, #c9d6ff, #e2e2e2);
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
-  background-color: #cbdfff;
-} */
+  padding: 2rem 1rem;
+  font-family: 'Poppins', sans-serif;
+}
 
+/* card container */
 .form-container {
-  width: 1000px
+  width: 100%;
+  max-width: 500px;
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.6s ease;
 }
 
-.title, .slogan{
+/* title + subtitle */
+.title {
   text-align: center;
-}
-.btn{
-  width: 100%;
-}
-.auth-image{
-  width: 100%;
-  border-radius: 8px;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
 }
 
-.alert{
+.slogan {
+  text-align: center;
+  color: #777;
+  font-size: 0.95rem;
   margin-bottom: 1.5rem;
 }
 
-.profile-card{
-  width: 500px;
-
-}
-.avatar{
-  margin-bottom: 1.5rem;
+.alert {
+  margin-bottom: 1rem;
 }
 
-.username{
-  text-transform: capitalize;
+.btn {
+  font-weight: 500;
+  transition: background 0.3s ease;
 }
 
-.profile-btn{
-  margin-top: 1.3rem;
-  width: 100%;
+.btn:hover {
+  background-color: #4096ff !important;
+  color: white !important;
+}
+
+.ant-btn-primary {
+  background-color: #1677ff;
+  border-color: #1677ff;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 500px) {
+  .form-container {
+    padding: 1.5rem;
+  }
+
+  .title {
+    font-size: 1.4rem;
+  }
+
+  .slogan {
+    font-size: 0.85rem;
+  }
 }
