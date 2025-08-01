@@ -19,6 +19,7 @@ import Register from './auth/Register';
 import Login from './auth/Login';
 
 import { useAuth } from './context/AuthProvider';
+import PomodoroTimer from './components/Pomodro';
 
 const App = () => {
   const location = useLocation();
@@ -37,7 +38,7 @@ const App = () => {
           path="/dashboard"
           element={
             <ProtectedRoute>
-              <Dashboard />
+              <Sidebar />
             </ProtectedRoute>
           }
         />
@@ -101,7 +102,7 @@ const App = () => {
           path="/statsTask"
           element={
             <ProtectedRoute>
-              <Dashboard />
+              <AllTasks />
             </ProtectedRoute>
           }
         />
@@ -110,6 +111,22 @@ const App = () => {
           element={
             <ProtectedRoute>
               <Gemini_AI />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/tasksAI"
+          element={
+            <ProtectedRoute>
+              <Gemini_AI />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/pomodro"
+          element={
+            <ProtectedRoute>
+              <PomodoroTimer />
             </ProtectedRoute>
           }
         />
