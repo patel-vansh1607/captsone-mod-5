@@ -1,6 +1,5 @@
 <a name="readme-top"></a>
 
-
 <br />
 <div align="center">
   
@@ -21,33 +20,31 @@ Task Management Website + Mobile App</h3>
   </p>
 </div>
 
-##### Note: *We have an Android app with the same UI.*
+##### Note: _We have an Android app with the same UI._
 
- ## All Features 🌟 
+## All Features 🌟
 
- ### 1. Redux Toolkit for Task State Management
- 
+### 1. Redux Toolkit for Task State Management
+
 #### All Tasks
- 
- ![attendance](https://res.cloudinary.com/dky3cpvtf/image/upload/v1711996619/2_xv3ljv.png)
- 
- - To change the status of a task to "Complete" and update its date to the date when it was completed.
- 
+
+![attendance](https://res.cloudinary.com/dky3cpvtf/image/upload/v1711996619/2_xv3ljv.png)
+
+- To change the status of a task to "Complete" and update its date to the date when it was completed.
 
 ### 2. Add Task
-  ### Add a new Task
 
-   ![attendance](https://res.cloudinary.com/dky3cpvtf/image/upload/v1711996633/3_ock8xg.png)
+### Add a new Task
+
+![attendance](https://res.cloudinary.com/dky3cpvtf/image/upload/v1711996633/3_ock8xg.png)
 
 - We can add or remove Tasks.
 
-    ### Filter Tasks
+  ### Filter Tasks
 
-   ![attendance](https://res.cloudinary.com/dky3cpvtf/image/upload/v1711998055/6_fiiti1.png)
+  ![attendance](https://res.cloudinary.com/dky3cpvtf/image/upload/v1711998055/6_fiiti1.png)
 
--  Allows users to easily filter tasks by date, status, and priority, providing a streamlined and efficient task management experience.
-
-
+- Allows users to easily filter tasks by date, status, and priority, providing a streamlined and efficient task management experience.
 
 ### 3. Mobile App and Responsive Design
 
@@ -56,6 +53,7 @@ Task Management Website + Mobile App</h3>
 ![attendance](https://res.cloudinary.com/dky3cpvtf/image/upload/v1711996674/5_dndm7s.png)
 
 - Github Repo of Android App
+
 ```bash
 https://github.com/Puskar-Roy/Task-Management-App
 ```
@@ -63,12 +61,11 @@ https://github.com/Puskar-Roy/Task-Management-App
 #### Responsive Design
 
 ![attendance](https://res.cloudinary.com/dky3cpvtf/image/upload/v1711996651/4_bmgkfh.png)
-  
 
 ## Getting Started 🚀
 
-
 ### Prerequisites
+
 Before you begin contributing to this project, make sure you have the following set up:
 
 - [Node.js](https://nodejs.org/): A JavaScript runtime.
@@ -85,36 +82,28 @@ Before you begin contributing to this project, make sure you have the following 
     npm install
    ```
 3. **Run This Project:**
+
    ```bash
    npm run dev
    ```
 
    <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
-
-
-
-
 ### Built With
 
 This section highlights the key frameworks and libraries that form the foundation of your project. Below are some notable examples:
 
-
 - **[![TypeScript](https://shields.io/badge/TypeScript-3178C6?logo=TypeScript&logoColor=FFF&style=flat-square)](https://www.typescriptlang.org/):** A superset of JavaScript that adds static types.
-- **[![JavaScript](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)](https://developer.mozilla.org/en-US/docs/Web/JavaScript):** The programming language of 
+- **[![JavaScript](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)](https://developer.mozilla.org/en-US/docs/Web/JavaScript):** The programming language of
 - **[![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)](https://www.mongodb.com/):** The database for modern applications.
 - **[![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://vercel.com/):** Cloud platform for serverless deployment and hosting.
 - **[![ESLint](https://img.shields.io/badge/ESLint-4B32C3?style=for-the-badge&logo=eslint&logoColor=white)](https://eslint.org/):** Pluggable linting utility for identifying and fixing code issues.
 - **[![Prettier](https://img.shields.io/badge/Prettier-F7B93E?style=for-the-badge&logo=prettier&logoColor=white)](https://prettier.io/):** Opinionated code formatter to ensure consistent code styling the web.
 
-
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+## Contributing 🌟
 
-   
-## Contributing 🌟   
 ### Making Contributions
 
 We welcome and appreciate contributions from the community ❤️! Here's how you can contribute:
@@ -131,11 +120,4 @@ We welcome and appreciate contributions from the community ❤️! Here's how yo
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
 ### Vansh Patel🖋️
-
-
-
-
-
-
