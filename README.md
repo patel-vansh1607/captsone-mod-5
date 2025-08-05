@@ -1,36 +1,3 @@
-## Features In Depth 🧠
-
-### 1. User Authentication
-- Secure login and registration with email and password.
-- All users are given a JSON Web Token (JWT) for a very secure session.
-- Use of Hashed passwords applied.
-
-### 2. Real-Time Notifications
-- Get notified instantly about important events and updates.
-
-### 3. Dynamic Content Management
-- All users get the main panel for managing content dynamically.
-- Ability to create, update, and delete posts.
-- Ability to use Gemini AI which is intergrated into the task management app.
-
-### 4. Customizable Themes
-- Choose from dark mode or light mode
-
-### 5. Analytics Dashboard
-- Real-time statistics and metrics for user activity.
-- Visual graphs and charts for easy data interpretation.
-
-## Tech Available in Taskee
-This website has may tech available, which include
-
-
-| **Tech**          | **Used on which Page**                    |
-|-------------------|---------------------------------|
-| Stats with Chart     | [stats.com](https://apptaskee.vercel.app/stats)  |
-| Stats AI Helper| [ai.com](https://apptaskee.vercel.app/tasksAI) |
-| Pomodro     | [pomodro.com](https://apptaskee.vercel.app/pomodro) |
-
-
 # 🌱 ProductiveLife – Your All-in-One Productivity Dashboard
 
 > 🚀 Simplified tools for productive living. Manage tasks, boost focus, and plant trees while listening to lofi beats.
@@ -57,6 +24,7 @@ This website has may tech available, which include
 - **Flask + Flask-Mail** (Integrated separately) – Email notifications
 - **JWT Auth** – Secure login/signup
 - **Multer** – Profile photo uploads
+- **Render** - To host backend codes.
 
 ### 📦 Dev Tools & Config
 - **Prettier** – Code formatter
@@ -107,10 +75,3 @@ This website has may tech available, which include
 - Pomodoro/music/player all work offline
 
 ---
-
-## 🚀 Getting Started
-
-### 📁 Clone the repo
-```bash
-git clone https://github.com/your-username/productive-dashboard.git
-cd productive-dashboard
