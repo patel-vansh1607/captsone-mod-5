@@ -82,7 +82,7 @@ const Sidebar = () => {
 
     localStorage.setItem(
       "user_data",
-      JSON.stringify({ userToken: token, user: updated }),
+      JSON.stringify({ userToken: token, user: updated })
     );
 
     message.success("Profile updated successfully");
@@ -166,7 +166,6 @@ const Sidebar = () => {
         animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 0.4, ease: "easeOut" }}
       >
-        {/* Profile Section */}
         <div className="mb-1 px-4">
           <Dropdown
             menu={{ items: menuItems }}
@@ -183,11 +182,17 @@ const Sidebar = () => {
                   />
                 </div>
               ) : (
-                <Avatar
-                  icon={<UserOutlined />}
-                  size={48}
-                  className="bg-gray-700 sm:w-12 sm:h-12 w-10 h-10 flex items-center justify-center"
-                />
+                <div className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center rounded-full bg-gray-700 border-2 border-white">
+                  <Avatar
+                    icon={<UserOutlined />}
+                    className="text-white"
+                    style={{
+                      backgroundColor: "transparent",
+                      fontSize: "1.2rem",
+                    }}
+                    size="large"
+                  />
+                </div>
               )}
 
               <div className="sm:block hidden">
@@ -239,7 +244,6 @@ const Sidebar = () => {
           <p>Are you sure you want to log out?</p>
         </Modal>
 
-        {/* Navigation */}
         <nav className="flex-1">
           <ul className="-mt-4 flex flex-col justify-center">
             {navItems.map((item, index) => (
