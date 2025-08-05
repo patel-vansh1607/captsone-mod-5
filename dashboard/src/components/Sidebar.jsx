@@ -28,6 +28,7 @@ import {
   LineChartOutlined,
   TrophyOutlined,
   FieldTimeOutlined,
+  CoffeeOutlined
 } from "@ant-design/icons";
 
 import {
@@ -106,6 +107,11 @@ const Sidebar = () => {
   ];
 
   const navItems = [
+    {
+      to: "/dashboard",
+      icon: <CoffeeOutlined className="text-2xl" />,
+      text: "Dashboard",
+    },
     {
       to: "/stats",
       icon: <LineChartOutlined className="text-2xl" />,
