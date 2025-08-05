@@ -1,6 +1,6 @@
-# 🌱 ProductiveLife – Your All-in-One Productivity Dashboard
+#  Taskee – Your All-in-One Productivity Dashboard
 
-> 🚀 Simplified tools for productive living. Manage tasks, boost focus, and plant trees while listening to lofi beats.
+> 🚀 Simplified tools for productive living. Manage tasks, boost focus, and plant trees while listening to lofi beats. Doesnt that sound awesome?
 
 ---
 
