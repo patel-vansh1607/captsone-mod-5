@@ -1,57 +1,38 @@
-import React, { useState } from 'react';
-import axios from 'axios';
+// ✅ This is the fixed backend `main.js` file
+// No React imports — this is pure Node.js backend
 
-const Gemini_AI = () => {
-  const [query, setQuery] = useState('');
-  const [response, setResponse] = useState('');
-  const [loading, setLoading] = useState(false);
+const express = require('express');
+const cors = require('cors');
+const bodyParser = require('body-parser');
+require('dotenv').config();
+const { GoogleGenerativeAI } = require('@google/generative-ai');
 
-  const handleAsk = async () => {
-    if (!query) return;
+const app = express();
+const PORT = process.env.PORT || 5000;
 
-    setLoading(true);
-    try {
-      const res = await axios.post(
-        'https://captsone-mod-5.onrender.com/api/content',
-        { question: query },
-        {
-          headers: {
-            'Content-Type': 'application/json',
-          },
-        }
-      );
-      setResponse(res.data.result);
-    } catch (error) {
-      console.error('❌ Error calling Gemini backend:', error.message);
-      setResponse('Failed to get response from Gemini backend.');
-    } finally {
-      setLoading(false);
-    }
-  };
+// Middleware
+app.use(cors());
+app.use(bodyParser.json());
 
-  return (
-    <div style={{ fontFamily: 'Poppins', padding: '2rem' }}>
-      <h1>Ask Gemini AI</h1>
-      <input
-        type="text"
-        value={query}
-        placeholder="Ask something..."
-        onChange={(e) => setQuery(e.target.value)}
-        style={{ padding: '10px', width: '300px', marginRight: '10px' }}
-      />
-      <button onClick={handleAsk} style={{ padding: '10px 20px' }}>
-        Ask
-      </button>
-      {loading ? (
-        <p>Loading...</p>
-      ) : (
-        <div style={{ marginTop: '20px' }}>
-          <strong>Response:</strong>
-          <p>{response}</p>
-        </div>
-      )}
-    </div>
-  );
-};
+// Gemini API endpoint
+app.post('/api/content', async (req, res) => {
+  try {
+    const prompt = req.body.question;
 
-export default Gemini_AI;
+    const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
+    const model = genAI.getGenerativeModel({ model: "gemini-pro" });
+
+    const result = await model.generateContent(prompt);
+    const text = result.response.text();
+
+    res.json({ result: text });
+  } catch (error) {
+    console.error('❌ Gemini API error:', error);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+});
+
+// Start server
+app.listen(PORT, () => {
+  console.log(`✅ Server running on http://localhost:${PORT}`);
+});
