@@ -91,19 +91,20 @@ const AllTasks = () => {
             </div>
             {filteredTasks.length > 0 ? (
                 <div className="flex flex-wrap gap-y-4 gap-x-14 justify-center  overflow-y-scroll mt-5 h-[80vh] sm:h-[80vh]">
-                    {filteredTasks.map((task) => (
-                        <TaskCard
-                            key={task.id}
-                            id={task.id}
-                            title={task.title}
-                            description={task.description}
-                            startDate={task.startDate}
-                            endDate={task.endDate}
-                            status={task.status}
-                            assignee={task.assignee}
-                            priority={task.priority}
-                        />
-                    ))}
+                    {tasks.map(task => (
+  <TaskCard
+    key={task.id} // ✅ FIXED
+    id={task.id}
+    title={task.title}
+    description={task.description}
+    startDate={task.startDate}
+    endDate={task.endDate}
+    status={task.status}
+    assignee={task.assignee}
+    priority={task.priority}
+  />
+))}
+
                 </div>
             ) : (
                 <div className="text-center mt-[17vh] sm:mt-[30vh]">
