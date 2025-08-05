@@ -30,20 +30,6 @@ const Navbar = () => {
 
       <div className={`navbar-menu ${menuOpen ? 'show' : ''}`}>
         <a
-          href="/features"
-          className={currentPath === '/features' ? 'active' : ''}
-          onClick={closeMenu}
-        >
-          Features
-        </a>
-        <a
-          href="/pricing"
-          className={currentPath === '/pricing' ? 'active' : ''}
-          onClick={closeMenu}
-        >
-          Pricing
-        </a>
-        <a
           href="/login"
           className={currentPath === '/login' ? 'active' : ''}
           onClick={closeMenu}
