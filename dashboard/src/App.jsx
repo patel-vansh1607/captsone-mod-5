@@ -18,8 +18,8 @@ import Register from './auth/Register';
 import Login from './auth/Login';
 
 import { useAuth } from './context/AuthProvider';
-import PomodoroTimer from './components/Pomodro';
-import Stats from './components/Stats';
+/* import PomodoroTimer from './components/Pomodro';
+ */import Stats from './components/Stats';
 import Dashboard from './components/Dashboard';
 
 const App = () => {
@@ -123,14 +123,14 @@ const App = () => {
             </ProtectedRoute>
           }
         />
-        <Route
+        {/* <Route
           path="/pomodro"
           element={
             <ProtectedRoute>
               <PomodoroTimer />
             </ProtectedRoute>
           }
-        /><Route
+        /> */}<Route
           path="/stats"
           element={
             <ProtectedRoute>
