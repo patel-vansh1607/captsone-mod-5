@@ -7,7 +7,6 @@ import AddTask from './components/AddTask';
 import AllTasks from './components/AllTasks';
 import CompleteTask from './components/CompleteTask';
 import InProgressTask from './components/InProgressTask';
-import Dashboard from './pages/Dashboard';
 import PendingTask from './components/PendingTask';
 import Deployed from './components/Deployed';
 import Deferred from './components/Deferred';
@@ -20,6 +19,8 @@ import Login from './auth/Login';
 
 import { useAuth } from './context/AuthProvider';
 import PomodoroTimer from './components/Pomodro';
+import Stats from './components/Stats';
+import Dashboard from './components/Dashboard';
 
 const App = () => {
   const location = useLocation();
@@ -38,7 +39,7 @@ const App = () => {
           path="/dashboard"
           element={
             <ProtectedRoute>
-              <Sidebar />
+              <Dashboard />
             </ProtectedRoute>
           }
         />
@@ -127,6 +128,13 @@ const App = () => {
           element={
             <ProtectedRoute>
               <PomodoroTimer />
+            </ProtectedRoute>
+          }
+        /><Route
+          path="/stats"
+          element={
+            <ProtectedRoute>
+              <Stats />
             </ProtectedRoute>
           }
         />
