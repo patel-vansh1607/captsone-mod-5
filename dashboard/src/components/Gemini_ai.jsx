@@ -12,7 +12,7 @@ const suggestedQuestions = [
   "Tips for managing multiple deadlines?",
   "How to break down a big project into tasks?",
   "What's the Pomodoro Technique?",
-];
+];  
 
 const Gemini_AI = () => {
   const [question, setQuestion] = useState('');
