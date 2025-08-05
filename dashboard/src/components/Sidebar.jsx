@@ -230,6 +230,10 @@ const Sidebar = () => {
               to: '/pomodro',
               icon: <ThunderboltOutlined className="text-2xl" />,
               text: 'Pomodro',
+            },{
+              to: '/stats',
+              icon: <ThunderboltOutlined className="text-2xl" />,
+              text: 'Stats',
             },
           ].map((item, index) => (
             <motion.li
