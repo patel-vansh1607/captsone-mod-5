@@ -1,7 +1,7 @@
-import React, { useState, useRef, useEffect } from 'react';
-import axios from 'axios';
-import ReactMarkdown from 'react-markdown';
-import './App.css';
+import React, { useState, useRef, useEffect } from "react";
+import axios from "axios";
+import ReactMarkdown from "react-markdown";
+import "./App.css";
 
 const suggestedQuestions = [
   "How do I prioritize tasks effectively?",
@@ -15,7 +15,7 @@ const suggestedQuestions = [
 ];
 
 const App = () => {
-  const [question, setQuestion] = useState('');
+  const [question, setQuestion] = useState("");
   const [loading, setLoading] = useState(false);
   const [conversation, setConversation] = useState([]);
   const [darkMode, setDarkMode] = useState(true);
@@ -25,41 +25,41 @@ const App = () => {
     const query = q || question;
     if (!query.trim()) return;
 
-    const userMessage = { type: 'user', text: query };
+    const userMessage = { type: "user", text: query };
     setConversation((prev) => [...prev, userMessage]);
     setLoading(true);
-    setQuestion('');
+    setQuestion("");
 
     try {
-      const res = await axios.post('http://localhost:3000/api/content', {
+      const res = await axios.post("http://localhost:3000/api/content", {
         question: query,
       });
 
-      const aiMessage = { type: 'ai', text: res.data.result };
+      const aiMessage = { type: "ai", text: res.data.result };
       setConversation((prev) => [...prev, aiMessage]);
     } catch (error) {
-      console.error('Error:', error);
+      console.error("Error:", error);
       setConversation((prev) => [
         ...prev,
-        { type: 'ai', text: '❌ Failed to get response from the server.' },
+        { type: "ai", text: "❌ Failed to get response from the server." },
       ]);
     }
     setLoading(false);
   };
 
   useEffect(() => {
-    chatEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+    chatEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [conversation, loading]);
 
   return (
-    <div className={`app-wrapper ${darkMode ? 'dark' : ''}`}>
+    <div className={`app-wrapper ${darkMode ? "dark" : ""}`}>
       <div className="chat-scroll-area">
         <h1 className="title">💬 Ask Gemini AI</h1>
 
         <div className="chat-box">
           {conversation.map((msg, idx) => (
             <div key={idx} className={`message ${msg.type}`}>
-              {msg.type === 'ai' ? (
+              {msg.type === "ai" ? (
                 <ReactMarkdown>{msg.text}</ReactMarkdown>
               ) : (
                 msg.text
@@ -80,7 +80,11 @@ const App = () => {
           <h3>💡 Suggested Questions</h3>
           <div className="suggestion-list">
             {suggestedQuestions.map((q, i) => (
-              <button key={i} className="suggestion-btn" onClick={() => handleAsk(q)}>
+              <button
+                key={i}
+                className="suggestion-btn"
+                onClick={() => handleAsk(q)}
+              >
                 {q}
               </button>
             ))}
@@ -98,7 +102,9 @@ const App = () => {
             />
             <span className="slider" />
           </label>
-          <span className="mode-label">{darkMode ? '🌙 Dark' : '☀️ Light'}</span>
+          <span className="mode-label">
+            {darkMode ? "🌙 Dark" : "☀️ Light"}
+          </span>
         </div>
 
         <div className="input-container">
@@ -107,10 +113,10 @@ const App = () => {
             value={question}
             onChange={(e) => setQuestion(e.target.value)}
             placeholder="Type your question..."
-            onKeyDown={(e) => e.key === 'Enter' && handleAsk()}
+            onKeyDown={(e) => e.key === "Enter" && handleAsk()}
           />
           <button onClick={() => handleAsk()} disabled={loading}>
-            {loading ? '...' : 'Ask'}
+            {loading ? "..." : "Ask"}
           </button>
         </div>
       </div>

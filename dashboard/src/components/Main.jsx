@@ -1,15 +1,15 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import Navbar from '../components/Navbar';
-import first_mockup from '../assets/demo-app-1.png';
-import second_mockup from '../assets/demo-app-2.png';
-import third_mockup from '../assets/demo-app-3.png';
-import '../styles/Main.css';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import Navbar from "../components/Navbar";
+import first_mockup from "../assets/demo-app-1.png";
+import second_mockup from "../assets/demo-app-2.png";
+import third_mockup from "../assets/demo-app-3.png";
+import "../styles/Main.css";
 
 const LandingPage = () => {
   const [isYearly, setIsYearly] = useState(true);
-  const [newsletterEmail, setNewsletterEmail] = useState('');
-  const [newsletterMessage, setNewsletterMessage] = useState('');
+  const [newsletterEmail, setNewsletterEmail] = useState("");
+  const [newsletterMessage, setNewsletterMessage] = useState("");
 
   const handleNewsletterSubmit = (e) => {
     e.preventDefault();
@@ -19,15 +19,13 @@ const LandingPage = () => {
       return;
     }
 
-
     console.log("Subscribed to newsletter:", newsletterEmail);
 
     setNewsletterMessage("Thank you for subscribing!");
-    setNewsletterEmail('');
-    
+    setNewsletterEmail("");
 
     setTimeout(() => {
-      setNewsletterMessage('');
+      setNewsletterMessage("");
     }, 4000);
   };
 
@@ -38,7 +36,8 @@ const LandingPage = () => {
       <section className="promo-section">
         <h1 className="promo-title">The Simplified Art of Productive Living</h1>
         <p className="promo-subtext">
-          Make each count with effortless organization, ensuring productivity and purpose every day
+          Make each count with effortless organization, ensuring productivity
+          and purpose every day
         </p>
         <div className="promo-buttons">
           <Link to="/login" className="store-button app-store">
@@ -57,18 +56,26 @@ const LandingPage = () => {
           <img src={second_mockup} alt="Mobile Mockup" />
         </div>
         <div className="hero-content">
-          <h1>Simplify Your Workflow,<br /> Anytime, Anywhere</h1>
- <Link to="/login" className="store-button app-store">
+          <h1>
+            Simplify Your Workflow,
+            <br /> Anytime, Anywhere
+          </h1>
+          <Link to="/login" className="store-button app-store">
             <i></i> Learn More
-          </Link>        </div>
+          </Link>{" "}
+        </div>
       </div>
 
       <div className="hero-container">
         <div className="hero-text">
-          <h1>Transform Your Routine for<br />Productivity and Reflection</h1>
+          <h1>
+            Transform Your Routine for
+            <br />
+            Productivity and Reflection
+          </h1>
           <p>
-            Efficiently manage your tasks with our intuitive todo app, ensuring smooth organization
-            and enhanced productivity with every click.
+            Efficiently manage your tasks with our intuitive todo app, ensuring
+            smooth organization and enhanced productivity with every click.
           </p>
           <Link to="/login" className="store-button app-store">
             <i></i> Learn More
@@ -110,7 +117,10 @@ const LandingPage = () => {
 
           <div className="card pro">
             <h3>Pro</h3>
-            <h1>${isYearly ? '75' : '8'}<span className="year-label">/{isYearly ? 'year' : 'mo'}</span></h1>
+            <h1>
+              ${isYearly ? "75" : "8"}
+              <span className="year-label">/{isYearly ? "year" : "mo"}</span>
+            </h1>
             <ul>
               <li>Advanced task management ✔️</li>
               <li>Enhanced priority levels ✔️</li>
@@ -126,7 +136,6 @@ const LandingPage = () => {
         </div>
       </section>
 
-
       <div className="newsletter-container">
         <h2 className="newsletter-title">Sign up to our newsletter</h2>
         <p className="newsletter-subtitle">
@@ -141,39 +150,52 @@ const LandingPage = () => {
             onChange={(e) => setNewsletterEmail(e.target.value)}
             required
           />
-          <button type="submit" className="newsletter-button">➤</button>
+          <button type="submit" className="newsletter-button">
+            ➤
+          </button>
         </form>
         {newsletterMessage && (
           <p className="newsletter-feedback">{newsletterMessage}</p>
         )}
       </div>
       <footer className="footer">
-      <div className="footer-container">
-        <div className="footer-column">
-          <h3>Taskee</h3>
-          <p>Simple but cool</p>
-        </div>
-        <div className="footer-column">
-          <h4>Quick Links</h4>
-          <ul>
-            <li><a href="/">Home</a></li>
-          </ul>
-        </div>
-        <div className="footer-column">
-          <h4>Follow Us</h4>
-          <div className="social-icons">
-            <a href="#"><i className="fab fa-facebook"></i></a>
-            <a href="#"><i className="fab fa-instagram"></i></a>
-            <a href="#"><i className="fab fa-twitter"></i></a>
-            <a href="#"><i className="fab fa-linkedin"></i></a>
+        <div className="footer-container">
+          <div className="footer-column">
+            <h3>Taskee</h3>
+            <p>Simple but cool</p>
+          </div>
+          <div className="footer-column">
+            <h4>Quick Links</h4>
+            <ul>
+              <li>
+                <a href="/">Home</a>
+              </li>
+            </ul>
+          </div>
+          <div className="footer-column">
+            <h4>Follow Us</h4>
+            <div className="social-icons">
+              <a href="#">
+                <i className="fab fa-facebook"></i>
+              </a>
+              <a href="#">
+                <i className="fab fa-instagram"></i>
+              </a>
+              <a href="#">
+                <i className="fab fa-twitter"></i>
+              </a>
+              <a href="#">
+                <i className="fab fa-linkedin"></i>
+              </a>
+            </div>
           </div>
         </div>
-      </div>
-      <p className="footer-bottom">&copy; {new Date().getFullYear()} Technolgia. All rights reserved.</p>
-    </footer>
+        <p className="footer-bottom">
+          &copy; {new Date().getFullYear()} Technolgia. All rights reserved.
+        </p>
+      </footer>
     </div>
   );
 };
 
 export default LandingPage;
-  

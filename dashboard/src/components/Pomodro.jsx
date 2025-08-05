@@ -1,6 +1,6 @@
-import React, { useState, useEffect, useRef } from 'react';
-import '../styles/Pomodro.css';
-import Sidebar from './Sidebar';
+import React, { useState, useEffect, useRef } from "react";
+import "../styles/Pomodro.css";
+import Sidebar from "./Sidebar";
 
 const PomodoroTimer = () => {
   const audioRef = useRef(null);
@@ -8,20 +8,20 @@ const PomodoroTimer = () => {
   const intervalRef = useRef(null);
   const secondsCounter = useRef(0);
 
-  const [mode, setMode] = useState('Pomodoro'); // Pomodoro, Short Break, Long Break
+  const [mode, setMode] = useState("Pomodoro"); // Pomodoro, Short Break, Long Break
   const [isRunning, setIsRunning] = useState(false);
   const [isMuted, setIsMuted] = useState(false);
 
   const defaultTimes = {
     Pomodoro: 25,
-    'Short Break': 5,
-    'Long Break': 15,
+    "Short Break": 5,
+    "Long Break": 15,
   };
 
   const [customTimes, setCustomTimes] = useState(defaultTimes);
   const [timeLeft, setTimeLeft] = useState(defaultTimes[mode] * 60);
   const [treesPlanted, setTreesPlanted] = useState(
-    parseInt(localStorage.getItem('treesPlanted')) || 0
+    parseInt(localStorage.getItem("treesPlanted")) || 0,
   );
 
   useEffect(() => {
@@ -48,7 +48,7 @@ const PomodoroTimer = () => {
 
           if (secondsCounter.current % 60 === 0) {
             const newCount = treesPlanted + 1;
-            localStorage.setItem('treesPlanted', newCount);
+            localStorage.setItem("treesPlanted", newCount);
             setTreesPlanted(newCount);
           }
 
@@ -64,8 +64,8 @@ const PomodoroTimer = () => {
   }, [isRunning, isMuted]);
 
   const formatTime = (sec) => {
-    const m = String(Math.floor(sec / 60)).padStart(2, '0');
-    const s = String(sec % 60).padStart(2, '0');
+    const m = String(Math.floor(sec / 60)).padStart(2, "0");
+    const s = String(sec % 60).padStart(2, "0");
     return `${m}:${s}`;
   };
 
@@ -84,10 +84,7 @@ const PomodoroTimer = () => {
     <>
       <Sidebar />
       <div className="pomodoro-container">
-        <audio
-          ref={audioRef}
-          src="/music/lofi.mp3" 
-        />
+        <audio ref={audioRef} src="/music/lofi.mp3" />
 
         <div className="visualizer" ref={visualizerRef}>
           {[...Array(30)].map((_, i) => (
@@ -100,11 +97,11 @@ const PomodoroTimer = () => {
           <h2>{formatTime(timeLeft)}</h2>
 
           <div className="mode-buttons">
-            {['Pomodoro', 'Short Break', 'Long Break'].map((m) => (
+            {["Pomodoro", "Short Break", "Long Break"].map((m) => (
               <button
                 key={m}
                 onClick={() => setMode(m)}
-                className={mode === m ? 'active' : ''}
+                className={mode === m ? "active" : ""}
               >
                 {m}
               </button>
@@ -125,11 +122,11 @@ const PomodoroTimer = () => {
             </label>
 
             <button onClick={() => setIsRunning(!isRunning)}>
-              {isRunning ? 'Pause' : 'Start'}
+              {isRunning ? "Pause" : "Start"}
             </button>
             <button onClick={handleReset}>Reset</button>
             <button onClick={() => setIsMuted(!isMuted)}>
-              {isMuted ? 'Unmute' : 'Mute'}
+              {isMuted ? "Unmute" : "Mute"}
             </button>
           </div>
 

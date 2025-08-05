@@ -1,20 +1,27 @@
-import React from 'react'
-import './App.css'
-import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom'
-import Register from './Auth/Register'
-import Login from './Auth/Login'
-import Dashboard from './pages/Dashboard'
-import { useAuth } from './contexts/AuthContext'
+import React from "react";
+import "./App.css";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  Navigate,
+} from "react-router-dom";
+import Register from "./Auth/Register";
+import Login from "./Auth/Login";
+import Dashboard from "./pages/Dashboard";
+import { useAuth } from "./contexts/AuthContext";
 
 const App = () => {
-  const { isAuthenticated } = useAuth()
+  const { isAuthenticated } = useAuth();
 
   return (
     <Router>
       <Routes>
         <Route
           path="/"
-          element={!isAuthenticated ? <Register /> : <Navigate to="/dashboard" />}
+          element={
+            !isAuthenticated ? <Register /> : <Navigate to="/dashboard" />
+          }
         />
         <Route
           path="/login"
@@ -26,7 +33,7 @@ const App = () => {
         />
       </Routes>
     </Router>
-  )
-}
+  );
+};
 
-export default App
+export default App;

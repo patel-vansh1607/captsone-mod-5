@@ -1,19 +1,10 @@
-import React from 'react';
-import {
-  Card,
-  Typography,
-  Form,
-  Input,
-  Button,
-  Flex,
-  Alert,
-  Spin,
-} from 'antd';
-import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import loginimage from '../assets/images.jpeg';
-import useLogin from '../hooks/useLogin';
-import '../styles/Login.css';
+import React from "react";
+import { Card, Typography, Form, Input, Button, Flex, Alert, Spin } from "antd";
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import loginimage from "../assets/images.jpeg";
+import useLogin from "../hooks/useLogin";
+import "../styles/Login.css";
 
 const Login = () => {
   const { error, loading, loginUser } = useLogin();
@@ -33,17 +24,20 @@ const Login = () => {
         <Typography.Title level={3} className="title">
           <strong>Sign In</strong>
         </Typography.Title>
-        <Typography.Text className="slogan">
-          Unlock your world!
-        </Typography.Text>
+        <Typography.Text className="slogan">Unlock your world!</Typography.Text>
 
-        <Form layout="vertical" onFinish={handleLogin} autoComplete="off" style={{ marginTop: 20 }}>
+        <Form
+          layout="vertical"
+          onFinish={handleLogin}
+          autoComplete="off"
+          style={{ marginTop: 20 }}
+        >
           <Form.Item
             label="Email"
             name="email"
             rules={[
-              { required: true, message: 'Please enter your email' },
-              { type: 'email', message: 'The input is not a valid E-mail!' },
+              { required: true, message: "Please enter your email" },
+              { type: "email", message: "The input is not a valid E-mail!" },
             ]}
           >
             <Input size="large" placeholder="Enter your email" />
@@ -52,7 +46,7 @@ const Login = () => {
           <Form.Item
             label="Password"
             name="password"
-            rules={[{ required: true, message: 'Please enter your password' }]}
+            rules={[{ required: true, message: "Please enter your password" }]}
           >
             <Input.Password size="large" placeholder="Enter your password" />
           </Form.Item>
@@ -69,13 +63,13 @@ const Login = () => {
 
           <Form.Item>
             <Button
-              type={loading ? '' : 'primary'}
+              type={loading ? "" : "primary"}
               htmlType="submit"
               size="large"
               block
               className="btn"
             >
-              {loading ? <Spin /> : 'Sign In'}
+              {loading ? <Spin /> : "Sign In"}
             </Button>
           </Form.Item>
 

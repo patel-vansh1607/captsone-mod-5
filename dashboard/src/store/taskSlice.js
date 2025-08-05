@@ -28,14 +28,14 @@ const taskSlice = createSlice({
     toggleTaskCompleted: (state, action) => {
       const task = state.find((task) => task.id === action.payload);
       if (task) {
-         if (task.status !== "completed") {
-           task.status = "Completed";
-           task.endDate = new Date().toISOString();
-         } else {
-           task.status = "Pending";
-           task.endDate = null;
-         }
-          localStorage.setItem("tasks", JSON.stringify(state));
+        if (task.status !== "completed") {
+          task.status = "Completed";
+          task.endDate = new Date().toISOString();
+        } else {
+          task.status = "Pending";
+          task.endDate = null;
+        }
+        localStorage.setItem("tasks", JSON.stringify(state));
       }
     },
     updateTask: (state, action) => {
@@ -54,5 +54,3 @@ export const { addTask, removeTask, toggleTaskCompleted, updateTask } =
 export default taskSlice.reducer;
 
 export const selectAllTasks = (state) => state.tasks;
-
-

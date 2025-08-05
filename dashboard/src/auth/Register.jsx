@@ -1,17 +1,9 @@
-import React from 'react';
-import {
-  Typography,
-  Form,
-  Input,
-  Button,
-  Alert,
-  Spin,
-  Flex,
-} from 'antd';
-import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import useSignup from '../hooks/useSignUp';
-import '../styles/Register.css';
+import React from "react";
+import { Typography, Form, Input, Button, Alert, Spin, Flex } from "antd";
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import useSignup from "../hooks/useSignUp";
+import "../styles/Register.css";
 
 const Register = () => {
   const { loading, error, registerUser } = useSignup();
@@ -44,7 +36,7 @@ const Register = () => {
           <Form.Item
             label="Full Name"
             name="name"
-            rules={[{ required: true, message: 'Please enter your full name' }]}
+            rules={[{ required: true, message: "Please enter your full name" }]}
           >
             <Input size="large" placeholder="Enter your full name" />
           </Form.Item>
@@ -53,8 +45,8 @@ const Register = () => {
             label="Email"
             name="email"
             rules={[
-              { required: true, message: 'Please enter your email' },
-              { type: 'email', message: 'Enter a valid email address' },
+              { required: true, message: "Please enter your email" },
+              { type: "email", message: "Enter a valid email address" },
             ]}
           >
             <Input size="large" placeholder="Enter your email" />
@@ -63,7 +55,7 @@ const Register = () => {
           <Form.Item
             label="Password"
             name="password"
-            rules={[{ required: true, message: 'Please enter your password' }]}
+            rules={[{ required: true, message: "Please enter your password" }]}
           >
             <Input.Password size="large" placeholder="Enter your password" />
           </Form.Item>
@@ -71,7 +63,9 @@ const Register = () => {
           <Form.Item
             label="Confirm Password"
             name="passwordConfirm"
-            rules={[{ required: true, message: 'Please confirm your password' }]}
+            rules={[
+              { required: true, message: "Please confirm your password" },
+            ]}
           >
             <Input.Password size="large" placeholder="Re-enter your password" />
           </Form.Item>
@@ -88,13 +82,13 @@ const Register = () => {
 
           <Form.Item>
             <Button
-              type={loading ? '' : 'primary'}
+              type={loading ? "" : "primary"}
               htmlType="submit"
               size="large"
               block
               className="btn"
             >
-              {loading ? <Spin /> : 'Create Account'}
+              {loading ? <Spin /> : "Create Account"}
             </Button>
           </Form.Item>
 

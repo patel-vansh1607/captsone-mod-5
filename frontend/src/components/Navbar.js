@@ -1,16 +1,16 @@
-import React, { useState, useEffect } from 'react';
-import '../styles/Navbar.css';
+import React, { useState, useEffect } from "react";
+import "../styles/Navbar.css";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [currentPath, setCurrentPath] = useState('/');
+  const [currentPath, setCurrentPath] = useState("/");
 
   useEffect(() => {
     setCurrentPath(window.location.pathname);
   }, []);
 
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: "smooth" });
     setMenuOpen(false);
   };
 
@@ -22,37 +22,39 @@ const Navbar = () => {
 
   return (
     <nav className="navbar">
-      <a href="/" className="navbar-logo" onClick={scrollToTop}>taskee</a>
+      <a href="/" className="navbar-logo" onClick={scrollToTop}>
+        taskee
+      </a>
 
       <button className="hamburger" onClick={toggleMenu}>
         ☰
       </button>
 
-      <div className={`navbar-menu ${menuOpen ? 'show' : ''}`}>
+      <div className={`navbar-menu ${menuOpen ? "show" : ""}`}>
         <a
           href="/features"
-          className={currentPath === '/features' ? 'active' : ''}
+          className={currentPath === "/features" ? "active" : ""}
           onClick={closeMenu}
         >
           Features
         </a>
         <a
           href="/pricing"
-          className={currentPath === '/pricing' ? 'active' : ''}
+          className={currentPath === "/pricing" ? "active" : ""}
           onClick={closeMenu}
         >
           Pricing
         </a>
         <a
           href="/login"
-          className={currentPath === '/login' ? 'active' : ''}
+          className={currentPath === "/login" ? "active" : ""}
           onClick={closeMenu}
         >
           Login
         </a>
         <a
           href="/register"
-          className={currentPath === '/register' ? 'active' : ''}
+          className={currentPath === "/register" ? "active" : ""}
           onClick={closeMenu}
         >
           Register

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import {
   Avatar,
   Dropdown,
@@ -9,15 +9,15 @@ import {
   Upload,
   Button,
   message,
-} from 'antd';
+} from "antd";
 import {
   UserOutlined,
   UploadOutlined,
   LogoutOutlined,
   EditOutlined,
   DownOutlined,
-} from '@ant-design/icons';
-import { useAuth } from '../context/AuthProvider';
+} from "@ant-design/icons";
+import { useAuth } from "../context/AuthProvider";
 
 const getBase64 = (file) =>
   new Promise((resolve, reject) => {
@@ -36,7 +36,7 @@ const Logout = () => {
   const confirmLogout = () => {
     logout();
     setLogoutConfirmVisible(false);
-    message.success('Logged out successfully');
+    message.success("Logged out successfully");
   };
 
   const handleUpdate = async (values) => {
@@ -47,53 +47,69 @@ const Logout = () => {
       try {
         updated.profilePhoto = await getBase64(file);
       } catch (err) {
-        message.error('Failed to upload image');
+        message.error("Failed to upload image");
         return;
       }
     }
 
     updated.name = values.name || userData.name;
 
-    const token = JSON.parse(localStorage.getItem('user_data'))?.userToken;
+    const token = JSON.parse(localStorage.getItem("user_data"))?.userToken;
     login(token, updated);
 
-    localStorage.setItem('user_data', JSON.stringify({ userToken: token, user: updated }));
-    message.success('Profile updated successfully');
+    localStorage.setItem(
+      "user_data",
+      JSON.stringify({ userToken: token, user: updated }),
+    );
+    message.success("Profile updated successfully");
     setModalVisible(false);
   };
 
   const menuItems = [
     {
-      key: 'edit',
+      key: "edit",
       icon: <EditOutlined />,
-      label: 'Edit Profile',
+      label: "Edit Profile",
       onClick: () => setModalVisible(true),
     },
     {
-      key: 'logout',
+      key: "logout",
       icon: <LogoutOutlined />,
       danger: true,
-      label: 'Logout',
+      label: "Logout",
       onClick: () => setLogoutConfirmVisible(true),
     },
   ];
 
   return (
-    <div style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column' }}>
-      <Dropdown menu={{ items: menuItems }} placement="bottom" trigger={['click']}>
-        <div style={{ display: 'flex', alignItems: 'center', cursor: 'pointer' }}>
+    <div
+      style={{
+        minHeight: "100vh",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        flexDirection: "column",
+      }}
+    >
+      <Dropdown
+        menu={{ items: menuItems }}
+        placement="bottom"
+        trigger={["click"]}
+      >
+        <div
+          style={{ display: "flex", alignItems: "center", cursor: "pointer" }}
+        >
           {userData?.profilePhoto ? (
             <Avatar src={userData.profilePhoto} size={64} />
           ) : (
             <Avatar icon={<UserOutlined />} size={64} />
           )}
           <Typography.Text style={{ marginLeft: 12, fontSize: 18 }}>
-            {userData?.name || 'User'}
+            {userData?.name || "User"}
           </Typography.Text>
           <DownOutlined style={{ marginLeft: 8 }} />
         </div>
       </Dropdown>
-
 
       <Modal
         title="Edit Profile"
@@ -111,14 +127,17 @@ const Logout = () => {
           <Form.Item label="Name" name="name">
             <Input />
           </Form.Item>
-          <Form.Item label="Profile Photo" name="profilePhoto" valuePropName="fileList">
+          <Form.Item
+            label="Profile Photo"
+            name="profilePhoto"
+            valuePropName="fileList"
+          >
             <Upload beforeUpload={() => false} listType="picture" maxCount={1}>
               <Button icon={<UploadOutlined />}>Upload</Button>
             </Upload>
           </Form.Item>
         </Form>
       </Modal>
-
 
       <Modal
         title="Confirm Logout"

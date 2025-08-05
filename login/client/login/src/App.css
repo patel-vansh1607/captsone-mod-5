@@ -1,12 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap");
 
-*{
+* {
   margin: 0;
   padding: 0;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
-body{
+body {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -15,37 +15,37 @@ body{
 }
 
 .form-container {
-  width: 1000px
+  width: 1000px;
 }
 
-.title, .slogan{
+.title,
+.slogan {
   text-align: center;
 }
-.btn{
+.btn {
   width: 100%;
 }
-.auth-image{
+.auth-image {
   width: 100%;
   border-radius: 8px;
 }
 
-.alert{
+.alert {
   margin-bottom: 1.5rem;
 }
 
-.profile-card{
+.profile-card {
   width: 500px;
-
 }
-.avatar{
+.avatar {
   margin-bottom: 1.5rem;
 }
 
-.username{
+.username {
   text-transform: capitalize;
 }
 
-.profile-btn{
+.profile-btn {
   margin-top: 1.3rem;
   width: 100%;
 }

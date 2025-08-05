@@ -8,7 +8,7 @@
   font-size: 2.2rem;
   font-weight: 600;
   color: #000;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   margin-bottom: 10px;
 }
 
@@ -17,7 +17,7 @@
   color: #555;
   max-width: 500px;
   margin: 0 auto 30px;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .promo-buttons {
@@ -80,7 +80,6 @@
   margin-left: -60px;
 }
 
-
 .switch {
   position: relative;
   display: inline-block;
@@ -105,7 +104,7 @@
 }
 
 .slider:before {
-  content: '';
+  content: "";
   position: absolute;
   height: 18px;
   width: 18px;
@@ -202,7 +201,6 @@ input:checked + .slider:before {
   margin-left: 4px;
 }
 
-
 @media (max-width: 768px) {
   .pricing-cards {
     flex-direction: column;
@@ -211,7 +209,7 @@ input:checked + .slider:before {
 }
 
 .newsletter-container {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   background-color: #f9f9f9;
   padding: 3rem 2rem;
   border-radius: 20px;
@@ -262,10 +260,10 @@ input:checked + .slider:before {
   transition: background-color 0.3s ease;
 }
 .mimage {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 0 auto;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
 }
 .newsletter-button:hover {
   background-color: #333;
