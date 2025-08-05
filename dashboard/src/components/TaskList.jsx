@@ -1,5 +1,5 @@
 import { useSelector } from 'react-redux';
-import Task from './Task'; // Reference the Task component
+import Task from './Task'; 
 
 const TaskList = () => {
     const tasks = useSelector(state => state.tasks);

@@ -93,7 +93,7 @@ const AllTasks = () => {
                 <div className="flex flex-wrap gap-y-4 gap-x-14 justify-center  overflow-y-scroll mt-5 h-[80vh] sm:h-[80vh]">
                     {tasks.map(task => (
   <TaskCard
-    key={task.id} // ✅ FIXED
+    key={task.id} 
     id={task.id}
     title={task.title}
     description={task.description}

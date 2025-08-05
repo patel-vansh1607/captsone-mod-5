@@ -20,8 +20,8 @@ const Deferred = () => {
                   <div className="flex flex-wrap gap-y-4 gap-x-14 overflow-y-scroll mt-5 h-[50vh] sm:h-[80vh] justify-center">
                       {completedTasks.map(task => (
                           <TaskCard
-                              key={task.id}         // ✅ React list rendering
-    id={task.id}           // ✅ Required prop
+                              key={task.id}         
+    id={task.id}           
     title={task.title}
     description={task.description}
     startDate={task.startDate}

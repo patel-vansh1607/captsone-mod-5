@@ -33,7 +33,6 @@ const AddTask = () => {
   };
 
   const handleStartDateChange = (date) => {
-    // Check if date is a valid Date object
     if (date instanceof Date && !isNaN(date)) {
       setFormData({
         ...formData,

@@ -8,7 +8,7 @@ const useLogin = () => {
   const [loading, setLoading] = useState(false)
 
   const loginUser = async (values) => {
-    const { email, password } = values; // ✅ FIX HERE
+    const { email, password } = values;
 
     try {
       setError(null)

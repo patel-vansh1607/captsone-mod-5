@@ -86,7 +86,7 @@ const PomodoroTimer = () => {
       <div className="pomodoro-container">
         <audio
           ref={audioRef}
-          src="/music/lofi.mp3" // your imported music file
+          src="/music/lofi.mp3" 
         />
 
         <div className="visualizer" ref={visualizerRef}>
@@ -96,7 +96,7 @@ const PomodoroTimer = () => {
         </div>
 
         <div className="timer-box">
-          <h1>🍅 {mode}</h1>
+          <h1> {mode}</h1>
           <h2>{formatTime(timeLeft)}</h2>
 
           <div className="mode-buttons">

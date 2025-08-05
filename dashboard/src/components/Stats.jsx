@@ -10,7 +10,7 @@ import {
   LineChart, Line,
 } from 'recharts';
 
-// Task Card
+
 const Card = ({ label, count, bg }) => (
   <Link to='/allTask'>
     <div className="w-full h-32 bg-white p-5 shadow-md rounded-md flex items-center justify-between cursor-pointer">
@@ -31,7 +31,6 @@ Card.propTypes = {
   bg: PropTypes.string.isRequired,
 };
 
-// Stats Dashboard
 const Stats = () => {
   const tasks = useSelector(selectAllTasks);
 
@@ -99,13 +98,10 @@ const Stats = () => {
             </div>
           </div>
 
-          {/* Charts Section */}
           <div className="w-full flex flex-col md:flex-row justify-between gap-6 mt-12">
 
-            {/* Left Column Charts */}
             <div className="w-full md:w-1/2 flex flex-col gap-6">
 
-              {/* Pie Chart */}
               <div className="w-full h-[300px] bg-white shadow-md rounded-md p-4">
                 <h2 className="text-lg font-semibold mb-4 text-center">Task Distribution</h2>
                 <ResponsiveContainer width="100%" height="100%">
@@ -129,7 +125,6 @@ const Stats = () => {
                 </ResponsiveContainer>
               </div>
 
-              {/* Donut Chart */}
               <div className="w-full h-[300px] bg-white shadow-md rounded-md p-4">
                 <h2 className="text-lg font-semibold mb-4 text-center">Completion Ratio</h2>
                 <ResponsiveContainer width="100%" height="100%">
@@ -155,10 +150,8 @@ const Stats = () => {
               </div>
             </div>
 
-            {/* Right Column Charts */}
             <div className="w-full md:w-1/2 flex flex-col gap-6">
 
-              {/* Bar Chart */}
               <div className="w-full h-[300px] bg-white shadow-md rounded-md p-4">
                 <h2 className="text-lg font-semibold mb-4 text-center">Tasks by Status</h2>
                 <ResponsiveContainer width="100%" height="100%">
@@ -173,7 +166,6 @@ const Stats = () => {
                 </ResponsiveContainer>
               </div>
 
-              {/* Line Chart */}
               <div className="w-full h-[300px] bg-white shadow-md rounded-md p-4">
                 <h2 className="text-lg font-semibold mb-4 text-center">Task Trends</h2>
                 <ResponsiveContainer width="100%" height="100%">

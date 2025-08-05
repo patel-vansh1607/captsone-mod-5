@@ -157,7 +157,7 @@ const Sidebar = () => {
           </Dropdown>
         </div>
 
-        {/* Edit Profile Modal */}
+
         <Modal
           title="Edit Profile"
           open={modalVisible}
@@ -186,7 +186,7 @@ const Sidebar = () => {
           </Form>
         </Modal>
 
-        {/* Logout Modal */}
+
         <Modal
           title="Confirm Logout"
           open={logoutConfirmVisible}

@@ -93,7 +93,7 @@ TaskCard.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   startDate: PropTypes.string.isRequired,
-  endDate: PropTypes.string, // allow null or undefined
+  endDate: PropTypes.string, 
   status: PropTypes.string.isRequired,
   assignee: PropTypes.string,
   priority: PropTypes.string,

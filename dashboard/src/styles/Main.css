@@ -340,7 +340,7 @@ input:checked + .slider:before {
   background: transparent;
 }
 
-/* 🔻 Responsive Styles */
+
 @media (max-width: 1024px) {
   .hero-container {
     padding: 2rem 1.5rem;

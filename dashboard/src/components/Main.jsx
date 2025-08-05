@@ -19,13 +19,13 @@ const LandingPage = () => {
       return;
     }
 
-    // Simulate API call or action
+
     console.log("Subscribed to newsletter:", newsletterEmail);
 
     setNewsletterMessage("Thank you for subscribing!");
     setNewsletterEmail('');
     
-    // Optionally clear message after few seconds
+
     setTimeout(() => {
       setNewsletterMessage('');
     }, 4000);
@@ -126,7 +126,7 @@ const LandingPage = () => {
         </div>
       </section>
 
-      {/* ✅ Newsletter Signup */}
+
       <div className="newsletter-container">
         <h2 className="newsletter-title">Sign up to our newsletter</h2>
         <p className="newsletter-subtitle">
