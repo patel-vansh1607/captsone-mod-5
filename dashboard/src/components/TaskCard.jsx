@@ -17,10 +17,11 @@ const TaskCard = ({
     const [complete, setComplete] = useState(false);
     const dispatch = useDispatch();
     const getDate = (dateString) => {
+        if (!dateString) return 'N/A';
         const dateObject = new Date(dateString);
-        const currentDate = dateObject.toLocaleDateString();
-        return currentDate;
-    };
+        return dateObject.toLocaleDateString();
+        };
+
     let startDatee = getDate(startDate);
     let endDatee = getDate(endDate);
     const getStatusColor = (status) => {
@@ -88,14 +89,15 @@ const TaskCard = ({
 
 
 TaskCard.propTypes = {
-    id: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-    description: PropTypes.string.isRequired,
-    startDate: PropTypes.string.isRequired,
-    endDate: PropTypes.string.isRequired,
-    status: PropTypes.string.isRequired,
-    assignee: PropTypes.string,
-    priority: PropTypes.string,
+  id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+  title: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  startDate: PropTypes.string.isRequired,
+  endDate: PropTypes.string, // allow null or undefined
+  status: PropTypes.string.isRequired,
+  assignee: PropTypes.string,
+  priority: PropTypes.string,
 };
+
 
 export default TaskCard;

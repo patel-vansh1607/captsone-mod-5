@@ -1,4 +1,4 @@
-/* import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import '../styles/Pomodro.css';
 import Sidebar from './Sidebar';
 
@@ -144,4 +144,3 @@ const PomodoroTimer = () => {
 };
 
 export default PomodoroTimer;
- */
