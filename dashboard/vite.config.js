@@ -15,4 +15,9 @@ export default defineConfig({
   server: {
     historyApiFallback: true,
   },
+  test: {
+    environment: 'jsdom',
+    setupFiles: ['./tests/setup.js'],
+    globals: true,
+  },
 });
